@@ -134,10 +134,14 @@ botonDerecho.addEventListener('click',function(evt){
     randomQuestion = parseInt(getRandomArbitrary(1,questionsBox.length-1));
     setTimeout(function(){ 
     }, 500);
-    if(verificarLongitud()){
+    if(questionsBox.length==0){
+        pregunta.innerHTML = 'No le atine';
+    }else{
+     if(verificarLongitud()){
         pregunta.innerHTML = `<span style='color: red;'>${nombreDelJugador}</span> tu personaje es: <span style='color: green;'>${filtrado[0].Nombre} </span>`
     }else{
         pregunta.innerHTML = questionsBox[randomQuestion];
+    }
     }
 });
 
