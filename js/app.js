@@ -91,6 +91,7 @@ function verificarLongitud(){
     if(filtrado.length==1){
         return true;
     }
+    return false;
 }
 
 let nombre = document.getElementById('nombreJugador');
@@ -135,7 +136,7 @@ botonDerecho.addEventListener('click',function(evt){
     setTimeout(function(){ 
     }, 500);
     if(questionsBox.length==0){
-        pregunta.innerHTML = 'No le atine';
+        pregunta.innerHTML = `${nombreDelJugador} no he podido adivinar tu personaje`;
     }else{
      if(verificarLongitud()){
         pregunta.innerHTML = `<span style='color: red;'>${nombreDelJugador}</span> tu personaje es: <span style='color: green;'>${filtrado[0].Nombre} </span>`
